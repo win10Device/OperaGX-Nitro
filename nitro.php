@@ -1,9 +1,11 @@
 <?php
+header("X-Robots-tag: noindex");
 if (str_contains($_SERVER['HTTP_USER_AGENT'], "bot")) { //Lazy fix
   die();
 }
 if (str_contains($_SERVER['HTTP_USER_AGENT'], "OPR/")) { //Lazy check
-die('<h1>Hey, You little shit</h1><p>Why would you use OperaGX or spoof it\'s user agent</p>');
+  die('<h1>Hey, You little shit</h1><p>Why would you use OperaGX or spoof it\'s user agent</p>');
+}
 function format_uuidv4($data)
 {
   assert(strlen($data) == 16);
